@@ -27,16 +27,12 @@ public class WithdrawFromAccount extends SeleniumTest {
    */
   private Account account = new Account();
   
-  //public WebDriver webDriver = new   FirefoxDriver();
   
   /**
    * Open browser and go to URL.
    */
   @Before
   public final void initializeSystem() {
-    //System.out.println(Browser.FIREFOX);
-   // System.setProperty("browser", "firefox");
-    System.out.println("2");
     String[] paramServer = ReadConfFile.getInfo("1");
     String url = paramServer[0];
     goTo(url);
@@ -79,7 +75,6 @@ public class WithdrawFromAccount extends SeleniumTest {
   public final void anExistingClientWithEURInHisAccount(
       final String nameClient, final String amount)
       throws Exception {
-    System.out.println("aaa");
     initializeUser(nameClient, amount);
     String totalBalance = account.getBalance();
     Assertions.assertThat(Boolean.TRUE);
@@ -139,7 +134,6 @@ public class WithdrawFromAccount extends SeleniumTest {
   @Override
   protected final String getDefaultBaseUrl() {
     // TODO Auto-generated method stub
-    System.out.println("1");
     return "FIREFOX";
   }
   
